@@ -1,3 +1,3 @@
 ---
 
-```💎```` KampBackend'in Angular CLI ile Yapılmış FrontEnd Hali
+```💎``` KampBackend'in Angular CLI ile Yapılmış FrontEnd Hali
