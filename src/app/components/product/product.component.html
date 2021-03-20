@@ -1,0 +1,43 @@
+<div *ngIf="dataLoaded == false" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Ürün Arama</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Northwind'de Ara!"> 
+  </div>
+
+  
+    <div *ngIf="filterText" class="alert alert-warning">
+        {{filterText}} İçin Sonuçlar | Tam {{products.length}} Ürün İçinden {{filterText.length}} Ürün Bulundu
+      </div>
+  
+
+<table *ngIf="dataLoaded != false" class="table">
+    
+    <thead>
+        <tr>
+            <th>Numara</th>
+            <th>Ürün Adı</th>
+            <th>Kategori Numara</th>
+            <th>Fiyat</th>
+            <th>Kdv'li Fiyat</th>
+            <th>Stok</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products | filterPipe:filterText">
+        <td>{{ product.productID }}</td>
+        <td>{{ product.productName | uppercase }}</td>
+        <td>{{ product.categoryID }}</td>
+        <td>{{ product.unitPrice| currency }}</td>
+        <td>{{ product.unitPrice| vatAdded:10 | currency }}</td>
+        <td>{{ product.unitsInStock }}</td>
+        <td><button (click)="addToCart(product)" type="button" class="btn btn-outline-success">Sepete Ekle</button></td>
+    </tr>
+    </tbody>
+
+</table>
