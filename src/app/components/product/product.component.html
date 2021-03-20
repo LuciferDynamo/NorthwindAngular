@@ -14,30 +14,34 @@
         {{filterText}} İçin Sonuçlar | Tam {{products.length}} Ürün İçinden {{filterText.length}} Ürün Bulundu
       </div>
   
+      <div class="shadow-lg p-3 mb-5 bg-body rounded">
 
-<table *ngIf="dataLoaded != false" class="table">
-    
-    <thead>
-        <tr>
-            <th>Numara</th>
-            <th>Ürün Adı</th>
-            <th>Kategori Numara</th>
-            <th>Fiyat</th>
-            <th>Kdv'li Fiyat</th>
-            <th>Stok</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let product of products | filterPipe:filterText">
-        <td>{{ product.productID }}</td>
-        <td>{{ product.productName | uppercase }}</td>
-        <td>{{ product.categoryID }}</td>
-        <td>{{ product.unitPrice| currency }}</td>
-        <td>{{ product.unitPrice| vatAdded:10 | currency }}</td>
-        <td>{{ product.unitsInStock }}</td>
-        <td><button (click)="addToCart(product)" type="button" class="btn btn-outline-success">Sepete Ekle</button></td>
-    </tr>
-    </tbody>
+        <table *ngIf="dataLoaded != false" class="table">
+            
+            <thead>
+                <tr>
+                    <th>Numara</th>
+                    <th>Ürün Adı</th>
+                    <th>Kategori Numara</th>
+                    <th>Fiyat</th>
+                    <th>Kdv'li Fiyat</th>
+                    <th>Stok</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let product of products | filterPipe:filterText">
+                <td>{{ product.productID }}</td>
+                <td>{{ product.productName | uppercase }}</td>
+                <td>{{ product.categoryID }}</td>
+                <td>{{ product.unitPrice| currency }}</td>
+                <td>{{ product.unitPrice| vatAdded:10 | currency }}</td>
+                <td>{{ product.unitsInStock }}</td>
+                <td><button (click)="addToCart(product)" type="button" class="btn btn-outline-success">Sepete Ekle</button></td>
+            </tr>
+            </tbody>
 
-</table>
+        </table>
+
+      </div>
+
