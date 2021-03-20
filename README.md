@@ -2,7 +2,7 @@
 
 ---
 
-** 🥺 - Güncellemeler **
+*** 🥺 - Güncellemeler ***
 
 Sepet geldi...
 
