@@ -3,19 +3,31 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="../../../assets/img/moon.svg" alt="" width="30" height="30" class="d-inline-block align-center">
-            Northwind
+            Anasayfa
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"></a>
-                </li>
                 <app-cart-summary></app-cart-summary>
-            </ul>
-            <!-- <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
+
+                <li class="nav-item">
+                <div class="btn-group" style="left: 10px;">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ürün
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/products/add">Ekle</a></li>
+                      <li><a class="dropdown-item disabled" href="#">Sil</a></li>
+                      <li><a class="dropdown-item disabled" href="#">Güncelle</a></li>
+                    </ul>
+                  </div>
+                </li>
+            </ul>   
+                <li style="list-style: none; padding: 10px; margin-left: 10px;">
+                    <a href="/register" class="btn btn-primary btn-lg active" tabindex="-1" role="button" aria-disabled="true">Kayıt ol</a>
+                </li>
+                <li style="list-style: none;">
+                    <a href="/login" class="btn btn-primary btn-lg active" tabindex="-1" role="button" aria-disabled="true">Giriş Yap</a>
+                </li>
         </div>
     </div>
 </nav>

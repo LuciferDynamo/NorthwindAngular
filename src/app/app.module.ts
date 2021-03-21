@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
 
 @NgModule({
    declarations: [
@@ -26,6 +29,8 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     FilterPipePipe,
     CartSummaryComponent,
     ProductAddComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    SwiperModule,
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right"
     })
